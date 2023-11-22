@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/fdf50e8961.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Roboto+Condensed&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background: linear-gradient(to right, #ffb6c1, #87ceeb);
+      }
+
+      .header {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        padding: 1.6rem 3.2rem;
+      }
+
+      .logo {
+        height: 5.5rem;
+      }
+
+      .nav-link-box {
+        display: flex;
+        gap: 6rem;
+        list-style: none;
+        font-family: "Gabarito", sans-serif;
+      }
+      .nav-link:link,
+      .nav-link:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #fff;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover,
+      .nav-link:active {
+        transform: scale(1.4);
+        color: greenyellow;
+      }
+
+      main {
+        display: flex;
+        gap: 3rem;
+        max-width: 130rem;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 3.2rem;
+      }
+
+      .img {
+        background-color: black;
+        max-width: 40%;
+      }
+
+      .home-img {
+        max-width: 100%;
+      }
+
+      .intro p {
+        font-size: 6rem;
+      }
+
+      .heading-primary {
+        font-size: 8rem;
+        color: rgb(59, 157, 241);
+      }
+
+      .slogan {
+        font-size: 4rem;
+        letter-spacing: 0;
+        margin-bottom: 3rem;
+      }
+
+      .btn:link,
+      .btn:visited {
+        padding: 1.6rem 3.2rem;
+        font-size: 2rem;
+        background-color: rgb(59, 157, 241);
+        color: rgb(255, 255, 255);
+        border: none;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .btn:hover,
+      .btn:active {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .section-content {
+        margin: 0 auto;
+        padding: 5rem 3.2rem;
+        max-width: 120rem;
+        font-size: 3rem;
+        font-weight: 500;
+      }
+
+      .section-content p {
+        color: #333;
+        margin-top: 3rem;
+      }
+
+      .section-footer {
+        background-color: black;
+      }
+
+      .footer {
+        color: rgb(241, 168, 59);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 2rem 3.2rem;
+      }
+
+      .heading-secondary {
+        font-size: 4rem;
+      }
+
+      .icons {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .btn-sub:link,
+      .btn-sub:visited {
+        background-color: rgb(55, 228, 237);
+        color: black;
+        padding: 1rem 3rem;
+        margin-top: 1rem;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .btn-sub:hover,
+      .btn-sub:active {
+        background-color: rgb(81, 81, 81);
+        color: rgb(59, 157, 241);
+      }
+
+      .icon:visited,
+      .icon:link {
+        font-size: 5rem;
+        color: white;
+        transition: all 0.3s;
+      }
+
+      .icon:hover,
+      .icon:active {
+        background-color: rgb(59, 157, 241);
+        color: black;
+      }
+
+      .subscribe {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .text {
+        color: white;
+        font-size: 2rem;
+        width: 40rem;
+        margin: 0 auto;
+        padding: 4rem;
+      }
+
+      @media all and (max-width: 764px) {
+        html {
+          font-size: 50%;
+        }
+      }
+
+      @media all and (max-width: 610px) {
+        main {
+          display: block;
+        }
+        .intro {
+          max-width: 100%;
+        }
+        .intro p {
+          font-size: 4rem;
+        }
+        .title {
+          font-size: 6rem;
+        }
+        .slogan {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+        .img {
+          margin-top: 5rem;
+          max-width: 100%;
+        }
+        .footer {
+          display: block;
+        }
+        .connect {
+          max-width: 100%;
+          margin: 0 auto 3rem auto;
+        }
+        .subscribe {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav-link-box {
+          gap: 2rem;
+        }
+      }
+
+      @media all and (max-width: 450px) {
+        html {
+          font-size: 35%;
+        }
+        .header {
+          padding: 0.8rem 1rem 0.8rem 0;
+          gap: 1rem;
+        }
+      }
+    </style>
+
+    <title>Info Tech</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-img">
+        <img src="img/logo.png" class="logo" alt="" srcset="" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-link-box">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+          <li><a href="/subscribe" class="nav-link">Subscribe</a></li>
+          <li><a href="/profile" class="nav-link">Profile</a></li>
+          <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="section-home">
+      <main>
+        <div class="intro">
+          <p>Welcome to</p>
+          <h1 class="heading-primary">Info Tech</h1>
+          <div class="slogan">Sharing technologies that matter</div>
+          <a href="/post" class="btn">Post a Blog &Rarr;</a>
+        </div>
+        <div class="img">
+          <img src="img/logo.png" class="home-img" alt="" srcset="" />
+        </div>
+      </main>
+    </section>
+
+    <section class="section-content">
+      <p>
+        Welcome to Info Tech, your one-stop destination for all things
+        technology. In this fast-paced digital era, staying informed and
+        empowered with the latest tech knowledge is not just a choice but a
+        necessity. We understand your passion for innovation, your quest for
+        knowledge, and your desire to explore the limitless possibilities that
+        technology offers.
+      </p>
+      <p>
+        At Info Tech, we're committed to bringing you engaging, informative, and
+        up-to-date content that covers a wide spectrum of topics within the tech
+        realm. Whether you're a tech enthusiast, a professional in the field, or
+        someone looking to make informed decisions about your digital life,
+        we've got you covered.
+      </p>
+      <p>
+        Our mission is simple: to demystify technology, make it accessible, and
+        help you harness its power for both your personal and professional
+        endeavors. From the cutting-edge trends shaping the industry to in-depth
+        tutorials that guide you through complex concepts, our goal is to
+        empower you with the knowledge you need.
+      </p>
+      <p>
+        Through our articles, reviews, guides, and insights, we aim to foster a
+        vibrant community of tech enthusiasts, learners, and experts. We
+        encourage you to explore, ask questions, and share your thoughts. After
+        all, technology is a collective journey, and we're thrilled to have you
+        along for the ride.
+      </p>
+      <p>
+        So, whether you're here to learn, to discover, or simply to geek out
+        about all things tech, welcome to Info Tech. The digital world awaits,
+        and we're here to be your trusted guide through it all.
+      </p>
+    </section>
+
+    <section class="section-footer">
+      <footer>
+        <div class="footer">
+          <div class="connect">
+            <h2 class="heading-secondary">Connect with us on:</h2>
+            <div class="icons">
+              <a href="#" class="icon">
+                <i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="#" class="icon">
+                <i class="fa-brands fa-instagram icon"></i>
+              </a>
+              <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
+              <a
+                href="https://www.linkedin.com/in/harshal-patil-hrp017/"
+                target="_blank"
+                class="icon"
+              >
+                <i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="subscribe">
+            <h2 class="heading-secondary">Subscribe to our:</h2>
+            <a href="/subscribe" class="btn btn-sub">Newsletter</a>
+          </div>
+        </div>
+        <p class="text">All copyrights &copy; reserved since 2023</p>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - Info Tech</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Roboto+Condensed&display=swap");
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Global styles */
+      body {
+        background: linear-gradient(to right, #ffb6c1, #87ceeb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      /* Sign-in page styles */
+      .section-signin {
+        background: #ffffff21;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        text-align: center;
+        max-width: 400px;
+        transition: transform 0.3s; /* Add transform transition */
+      }
+
+      /* Hover effect for the sign-in form */
+      .section-signin:hover {
+        transform: scale(1.02); /* Slight scale-up on hover */
+      }
+
+      .signin-form h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .signin-form label {
+        display: block;
+        margin-top: 1rem;
+        color: #666;
+        transition: color 0.3s;
+      }
+
+      /* Hover effect for labels */
+      .signin-form label:hover {
+        color: #121094;
+        text-decoration: underline;
+        text-transform: capitalize;
+      }
+
+      .signin-form input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color 0.3s, box-shadow 0.3s; /* Transition border color and box-shadow */
+      }
+
+      /* Add focus styles and box-shadow */
+      .signin-form input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+
+      .signin-form button {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+
+      /* Button animation on hover */
+      .signin-form button:hover {
+        background-color: #000000d3;
+        transform: scale(1.05);
+      }
+
+      .signup_link {
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #666666;
+      }
+
+      .signup_link a {
+        color: #2691d9;
+        text-decoration: none;
+      }
+
+      .signup_link a:hover {
+        text-decoration: underline;
+      }
+
+      .errMsg {
+        display: block;
+        margin: 10px 0;
+        color: red;
+      }
+      @media (max-width: 500px) {
+        body {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section-signin">
+      <main>
+        <div class="signin-form">
+          <h2>Sign In</h2>
+          <form action="/login" method="POST">
+            <label for="username">Email:</label>
+            <input
+              type="text"
+              id="username"
+              name="logEmail"
+              value=""
+              autocomplete="off"
+              required
+            />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="logPassword"
+              value=""
+              autocomplete="off"
+              required
+            />
+
+            <span class="errMsg"><%= payload.errMsg %></span>
+
+            <button type="submit">Sign In</button>
+            <div class="signup_link">
+              Create an Account? <a href="/signup">Sign up Here</a>
+            </div>
+          </form>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>

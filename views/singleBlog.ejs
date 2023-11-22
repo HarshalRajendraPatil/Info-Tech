@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/fdf50e8961.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/fdf50e8961.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Roboto+Condensed&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background: linear-gradient(to right, #ffb6c1, #87ceeb);
+      }
+
+      .header {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        padding: 1.6rem 3.2rem;
+      }
+
+      .logo {
+        height: 5.5rem;
+      }
+
+      .nav-link-box {
+        display: flex;
+        gap: 6rem;
+      }
+
+      .nav-link-box {
+        list-style: none;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      .nav-link:link,
+      .nav-link:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #fff;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover,
+      .nav-link:active {
+        transform: scale(1.4);
+        color: greenyellow;
+      }
+
+      .container {
+        max-width: 120rem;
+        padding: 1.5rem 3rem;
+        margin: 0 auto;
+      }
+
+      .heading {
+        font-size: 5rem;
+        margin-bottom: 3rem;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      .time {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin: 7px 0;
+      }
+
+      .img {
+        background-color: red;
+        display: block;
+        width: 65%;
+      }
+
+      .body {
+        margin-top: 3rem;
+        font-size: 3rem;
+        padding: 1.6rem 3.2rem;
+        border-radius: 6px;
+        font-size: 3rem;
+        background-color: rgb(14, 14, 15);
+        color: rgb(255, 255, 255);
+        border: none;
+        transition: all 0.3s;
+      }
+
+      .btn:link,
+      .btn:visited {
+        display: inline-block;
+        text-decoration: none;
+        margin: 3rem 1rem 0 0;
+        padding: 1.6rem 3.2rem;
+        font-size: 2rem;
+        background-color: rgb(59, 157, 241);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #000000d3;
+        transform: scale(1.05); /* Slight scale-up on hover */
+      }
+
+      .like {
+        font-size: 5rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 10px;
+      }
+
+      .likeBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+        border-radius: 50%;
+        transition: all 0.3s linear;
+      }
+
+      .likeBtn:hover {
+        background-color: rgb(251, 151, 151);
+      }
+
+      .likeCount {
+        color: black;
+      }
+
+      .active {
+        color: red;
+      }
+
+      @media (max-width: 750px) {
+        .img {
+          width: 100%;
+        }
+      }
+
+      @media (max-width) {
+        .nav-link-box {
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        html {
+          font-size: 55%;
+        }
+      }
+
+      @media (max-width: 450px) {
+        .like {
+          font-size: 3rem;
+        }
+      }
+
+      @media all and (max-width: 400px) {
+        .header {
+          padding: 0.8rem 1.6rem 0.8rem 0;
+        }
+        .nav-link-box {
+          gap: 2rem;
+        }
+      }
+
+      @media all and (max-width: 340px) {
+        html {
+          font-size: 35%;
+        }
+      }
+    </style>
+    <!-- <script src="likeButton.js" defer></script> -->
+    <title>Info Tech</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-img">
+        <img src="img/logo.png" class="logo" alt="" srcset="" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-link-box">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+          <li><a href="/subscribe" class="nav-link">Subscribe</a></li>
+          <li><a href="/profile" class="nav-link">Profile</a></li>
+          <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1 class="heading"><%= title %></h1>
+      <p class="time"><%= time %></p>
+      <img src="<%= coverImage %>" class="img" alt="cover" srcset="" />
+      <p class="body"><%= body %></p>
+      <a href="/blogs" class="btn">Go back &Rarr;</a>
+      <% if (owner) { %>
+      <a href="/blogs/delete/<%= _id %>" class="btn">Delete</a>
+      <a href="/blogs/update/<%= _id %>" class="btn">Edit</a>
+      <% } %>
+      <p class="like">
+        Like this Blog?
+        <span class="likeBtn"> <i class="fa-solid fa-heart"></i></span>
+        <span class="likeCount"><%= likes.length %></span>
+      </p>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const likeBtn = document.getElementsByClassName("likeBtn");
+      let id = "<%-_id%>";
+
+      $(document).on("click", ".likeBtn", (event) => {
+        const button = $(event.target);
+        const postId = id;
+        const likeDisplay = document.querySelector(".likeCount");
+
+        // This is the way to make put request to the server for changing the status of like button
+        $.ajax({
+          url: `/blogs/like/${id}`,
+          type: "PUT",
+          success: (postData) => {
+            // Showing the no. of likes the post has got
+            if (postData[0].likes.length === 0) {
+              likeDisplay.innerHTML = "";
+            } else {
+              likeDisplay.textContent = postData[0].likes.length;
+            }
+
+            if (postData[0].likes.includes(postData[1]._id)) {
+              button.addClass("active");
+            } else {
+              button.removeClass("active");
+            }
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

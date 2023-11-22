@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@500&family=Roboto+Condensed&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        background: linear-gradient(to right, #ffb6c1, #87ceeb);
+      }
+
+      .header {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        padding: 1.6rem 3.2rem;
+      }
+
+      .logo {
+        height: 5.5rem;
+      }
+
+      .nav-link-box {
+        display: flex;
+        gap: 6rem;
+        list-style: none;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      .nav-link:link,
+      .nav-link:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #fff;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover,
+      .nav-link:active {
+        transform: scale(1.4);
+        color: greenyellow;
+      }
+
+      .container {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding: 1.5rem 3rem;
+      }
+
+      .heading-primary {
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      .heading-secondary {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-family: "Gabarito", sans-serif;
+      }
+
+      .form {
+        max-width: 50%;
+        border: 3px solid white;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.32);
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        color: rgb(59, 157, 241);
+        padding: 2rem 4rem;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+      }
+
+      form:hover {
+        transform: scale(1.02);
+      }
+
+      form input {
+        border: none;
+        outline: none;
+        font-weight: 200;
+        border-radius: 10px;
+      }
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .input {
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+      }
+
+      .label {
+        padding: 0 5px;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      button {
+        padding: 1.6rem 3.2rem;
+        font-size: 2rem;
+        background-color: rgb(59, 157, 241);
+        color: rgb(255, 255, 255);
+        border: none;
+        transition: all 0.3s;
+      }
+
+      button:hover {
+        background-color: #000000d3;
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 1000px) {
+        .form {
+          max-width: 80%;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav-link-box {
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        html {
+          font-size: 50%;
+        }
+        .form {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        html {
+          font-size: 35%;
+        }
+
+        .header {
+          padding: 0.8rem 1.6rem 0.8rem 0;
+        }
+      }
+    </style>
+    <title>Subscribe</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-img">
+        <img src="img/logo.png" class="logo" alt="" srcset="" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-link-box">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/blogs" class="nav-link">Blogs</a></li>
+          <li><a href="/subscribe" class="nav-link">Subscribe</a></li>
+          <li><a href="/profile" class="nav-link">Profile</a></li>
+          <li><a href="/logout" class="nav-link">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <h1 class="heading-primary">Join Our Mailing List</h1>
+      <h2 class="heading-secondary">
+        Get weekly updates delivered directly to your inbox.
+      </h2>
+      <form action="/subscribe" class="form" method="post">
+        <div class="inputs">
+          <label for="firstName" class="label">First Name</label>
+          <input
+            type="text"
+            name="firstName"
+            class="input"
+            id=""
+            placeholder="First Name"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="inputs">
+          <label for="lastName" class="label">Last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            class="input"
+            id=""
+            placeholder="Last Name"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="inputs">
+          <label for="email" class="label">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="input"
+            id=""
+            placeholder="Email"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </body>
+</html>
